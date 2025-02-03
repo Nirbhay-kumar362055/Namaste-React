@@ -2,10 +2,11 @@
 const RestaurantCard = (props) => {
   const { resData } = props;
   return (
-    <div className="restaurantCard">
+    <div className="m-2 p-2 border-2 border-gray-200 rounded-md">
       <img
+
         alt="cardLogo"
-        className="cardLogo"
+        className="w-[250px] h-[200px] object-cover"
         src={resData.imageUrl}
       ></img>
       <h3 className="title">{resData.restaurantName}</h3>

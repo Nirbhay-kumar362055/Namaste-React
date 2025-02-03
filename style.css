@@ -1,13 +1,17 @@
+@import "tailwindcss";
+
+
+
 /* header */
-#header{
+/* #header{
     display: flex;
     justify-content: space-between;
     background-color: #FC8019;
     color: #fff;
 }
 #navbar{
-    display: block; /*New CSS property used 😁*/
-    align-content: center;
+    display: block; New CSS property used 😁 */
+    /* align-content: center;
     padding-right: 20px;
 }
 #navbar ul{
@@ -24,19 +28,19 @@
 #logo{
     width: 100%;
     padding: 2px 10px;
-}
+} */
 
 /* Body */
-#restaurantCardContainer{
+/* #restaurantCardContainer{
     padding: 20px 10px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-}
-.restaurantCard{
+    justify-content: center; */
+/* } */
+/* .restaurantCard{ */
     /* width: 160px; */
     /* height: 270px; */
-    border-radius: 8px;
+    /* border-radius: 8px;
     margin: 20px;
     display: flex;
     flex-direction: column;
@@ -48,28 +52,29 @@
 .restaurantCard:hover{
     cursor: pointer;
     border: 1px solid black;
-}
-.restaurantCard .cardLogo{
+} */
+/* .restaurantCard .cardLogo{
     width: 98%;
     height: 100%;
     padding: 2px;
     /* aspect-ratio: 1 / 1; */
-}
-.cusine{
+/* } */
+/* .cusine{
     color: gray;
-}
-.rating{
+} */ 
+/* .rating{
     font-weight: 600;
     font-size: 1.2rem;
-}
+} */
 
-.shimmer-container{
+/* .shimmer-container{
     display: flex;
     flex-wrap: wrap;
-}
-.shimmer-card{
+} */
+/* .shimmer-card{
     width:200px;
     height: 400px;
     background-color:#e3dbdb;
     background: linear-gradient(#e3dbdd, #cfdffd);
-}
+} */
+

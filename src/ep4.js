@@ -1,4 +1,4 @@
-import React from "react";
+import React, {lazy ,Suspense }from "react";
 import ReactDOM from "react-dom/client";
 import Heading from "./components/Header";
 import Body from "./components/Body";
@@ -8,6 +8,8 @@ import Error from "./components/Error";
 import Cart from "./components/Cart";
 import SingleResPage from "./components/singleResPage";
 import { createBrowserRouter, RouterProvider, Outlet, useLocation } from "react-router-dom";
+import { lazy } from "react";
+// import Grocerry from "./components/Grocerry";
 
 // Making project like swiggy
 /* 
@@ -26,6 +28,7 @@ import { createBrowserRouter, RouterProvider, Outlet, useLocation } from "react-
         * contacts
         * address
 */
+const Grocerry = lazy(() => import("./components/Grocerry"));
 
 
 const AppLayout = () => {
@@ -53,6 +56,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path: "/Grocerry",
+        element: <Suspense fallback = {<h1>loading.....</h1>}><Grocerry /></Suspense>,
       },
       {
         path: "/",

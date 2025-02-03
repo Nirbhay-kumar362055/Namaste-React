@@ -32,3 +32,13 @@
 - Good error message
 - HTTPs
 - Error Handling
+
+
+# css styling way
+1) sass
+2) scss
+3) styled component
+4) taiwind css
+5) chakra ui
+6) material ui
+7) ant design 

@@ -6,9 +6,9 @@ const Contact = () => {
       <h3>If you have any query, you can contact us at</h3>
       <ul>
         <li>
-          Email: <b>om2215197@gndec.ac.in</b>
+          Email: <b>nirbhaykumar5530@gmail.com/</b>
         </li>
-        <li>Phone: 8757710585</li>
+        <li>Phone: 8252571853</li>
       </ul>
       <input
         type="text"

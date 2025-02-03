@@ -1,6 +1,7 @@
 import RestaurantCard from "./RestaurantCard";
 import restaurantList from "../utils/mockData";
 import { useState, useEffect } from "react";
+import useOnlineStatus from "../utils/useOnlineStatus";
 import Shimmer from "./Shimmer";
 
 const Body = () => {
@@ -11,6 +12,7 @@ const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState(restaurantList);
   const [filteredRes, setFilteredRes] = useState(listOfRestaurants);
   const [searchText, setSearchText] = useState("");
+  const isOnline = useOnlineStatus();
 
   // if no dependency array as second parameter in useEffect(), then useEffect will be called on every rendering of the component
   // if dependency array is an empty array, then useEffect() will be called only for initial rendering of the component.
@@ -19,6 +21,14 @@ const Body = () => {
   useEffect(() => {
     // fetchData();
   }, []);
+
+  if(isOnline === false){
+    return (
+      <div>
+        <h1>Garib aadmi Internet lagwaoo</h1>
+      </div>
+    );
+  }
 
   // const fetchData = async () => {
   //   const data = await fetch(
@@ -40,17 +50,17 @@ const Body = () => {
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
   ) : (
-    <div id="body">
-      <div id="search_bar">
+    <div id="body" className="">
+      <div id="search_bar" className="flex py-2 ">
         <input
-          className="search-box"
+          className="mx-2 border-2 border-gray-200 rounded-md"
           type="text"
           value={searchText}
           onChange={(e) => {
             setSearchText(e.target.value);            
           }}
         ></input>
-        <button className="search-btn" onClick={() => {
+        <button className="mx-1 px-3 bg-gray-100 rounded-md" onClick={() => {
 
           const filteredListOfRestaurants123 = listOfRestaurants.filter((res)=>res.restaurantName.toLowerCase().includes(searchText.toLowerCase()));
           console.log(filteredListOfRestaurants123);
@@ -62,7 +72,7 @@ const Body = () => {
         </button>
       </div>
       <button
-        className="filter_button"
+        className="py-3 mx-2 px-1.5 my-1 bg-gray-100 rounded-md hover:bg-gray-200" 
         onClick={() => {
           filteredRestaurantList = restaurantList.filter(
             (res) => res.avgRating > 4,
@@ -73,7 +83,7 @@ const Body = () => {
         Top rated restaurants
       </button>
 
-      <div id="restaurantCardContainer">
+      <div id="restaurantCardContainer " className="flex flex-wrap">
         {filteredRes.map((restaurant) => {
           return (
             <RestaurantCard
